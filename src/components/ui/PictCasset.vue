@@ -4,8 +4,9 @@
     <div class="media">
       <div class="mediaThum"><img :src="item.media_url" width="250"></div>
       <div class="mediaDetails">
-        <p>{{item.caption}}</p>
-        <p>{{item.timestamp.split('T')[0]}}</p>
+        <p class="mediaTimestamp">{{item.timestamp.split('T')[0]}}</p>
+        <p v-if="item.caption.split('#')[0]">{{item.caption.split('#')[0]}}</p>
+        <p class="mediaTag" v-if="item.caption.split('#')[1]">タグ: {{this.replace(item.caption.split('#'))}}</p>
       </div>
     </div>
   </a>
@@ -20,6 +21,12 @@ export default {
   data: () => ({
   }),
   methods:{
+    replace: function(array){
+      let data = array.slice();
+      data.shift();
+
+      return data.join(',')
+    }
   },
   computed: {
   },
@@ -31,7 +38,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 a {
-  color: #42b983;
+  color: #333;
+  text-decoration: none;
 }
 p{
   margin: 0;
@@ -44,6 +52,15 @@ img{
   .mediaThum{
     float: left;
     margin-right: 10px;
+  }
+
+  .mediaTimestamp{
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .mediaTag{
+    padding-top: 10px;
   }
 
   &:after{
