@@ -106,6 +106,7 @@ ul {
 li {
   display: block;
   margin: 0 10px;
+  background: #fff;
 }
 a {
   color: #42b983;
