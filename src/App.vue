@@ -2,17 +2,15 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" height="30">
     <h1>instagram Viewer</h1>
-    <Medialist/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Medialist from './components/Medialist.vue'
 
 export default {
   name: 'app',
   components: {
-    Medialist
   }
 }
 </script>

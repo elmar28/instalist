@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="initScreen">
     <p>
       投稿一覧
     </p>
