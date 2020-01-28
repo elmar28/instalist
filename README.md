@@ -1,5 +1,7 @@
 # instalist
 
+インスタグラムのグラフAPIをローカルに保存して、vueとvuexにて実装テスト
+
 ## Project setup
 ```
 npm install
