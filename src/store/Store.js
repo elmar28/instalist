@@ -14,8 +14,7 @@ export const store = new Vuex.Store({
     // 実際にStateのデータを更新する処理を記述する。
     dataAll: ( state, payload ) => {
       if(!payload.id){
-        console.info(payload);
-        console.info(state.dataAll);
+        //console.info(payload);
         state.dataAll.media.data = state.dataAll.media.data.concat(payload.data);
         state.dataAll.media.paging = state.dataAll.media.data.concat(payload.paging);
         return;
