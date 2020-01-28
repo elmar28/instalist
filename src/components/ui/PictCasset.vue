@@ -40,4 +40,17 @@ p{
 img{
   vertical-align: bottom;
 }
+.media{
+  .mediaThum{
+    float: left;
+    margin-right: 10px;
+  }
+
+  &:after{
+    content: '';
+    clear: both;
+    height: 0;
+    display: block;
+  }
+}
 </style>

@@ -13,9 +13,11 @@ export const store = new Vuex.Store({
   mutations:{
     // 実際にStateのデータを更新する処理を記述する。
     dataAll: ( state, payload ) => {
-      //console.info(payload);
       if(!payload.id){
-        state.dataAll = state.dataAll.media.data.concat(payload.data);
+        console.info(payload);
+        console.info(state.dataAll);
+        state.dataAll.media.data = state.dataAll.media.data.concat(payload.data);
+        state.dataAll.media.paging = state.dataAll.media.data.concat(payload.paging);
         return;
       }
 

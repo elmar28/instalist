@@ -5,8 +5,8 @@
     </p>
     <ul class="userMediaList">
       <pictCasset v-for="item in mediaAll" v-bind:key="item.id" :item="item" />
-      <li class="userMediaListNext" v-if="dataAll && dataAll.media.paging.next">
-        <a href="dataAll.media.paging.next">続きを読み込む</a>
+      <li class="userMediaListNext" v-if="dataAll && dataAll.media.paging.next" @click.prevent="getNext">
+        <a href="javascript:void(0)">続きを読み込む</a>
       </li>
     </ul>
   </div>
@@ -56,10 +56,40 @@ export default {
           self.callMediaList = false;
         })
     },
-    
+    getNext: function(){
+      let url = this.dataAll.media.paging.next;
+
+      this.getMediaList(url);
+    },
+    closest: function (el, selector) {
+      let matchesFn;
+
+      // find vendor prefix
+      ['matches','webkitMatchesSelector','mozMatchesSelector','msMatchesSelector','oMatchesSelector']
+        .some(function(fn) {
+          if (typeof document.body[fn] == 'function') {
+            matchesFn = fn;
+            return true;
+          }
+          return false;
+        })
+
+      let parent;
+
+      // traverse parents
+      while (el) {
+        parent = el.parentElement;
+        if (parent && parent[matchesFn](selector)) {
+          return parent;
+        }
+        el = parent;
+      }
+
+      return null;
+    }
   },
   computed: {
-    ...mapState(['mediaAll',`dataAll`])
+    ...mapState(['mediaAll','dataAll'])
   },
   created () {
     this.getMediaList();
