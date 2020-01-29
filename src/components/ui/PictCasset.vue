@@ -1,12 +1,19 @@
 <template>
-<li>
+<li :data-href="item.permalink">
   <a :href="item.permalink">
     <div class="media">
-      <div class="mediaThum"><img :src="item.media_url" width="250"></div>
+      <div class="mediaThum">
+        <img :src="item.media_url" width="250">
+      </div>
       <div class="mediaDetails">
         <p class="mediaTimestamp">{{item.timestamp.split('T')[0]}}</p>
-        <p v-if="item.caption.split('#')[0]">{{item.caption.split('#')[0]}}</p>
-        <p class="mediaTag" v-if="item.caption.split('#')[1]">タグ: {{this.replace(item.caption.split('#'))}}</p>
+        <p
+         v-if="item.caption.split('#')[0]"
+        >{{item.caption.split('#')[0]}}</p>
+        <p
+         class="mediaTag"
+         v-if="item.caption.split('#')[1]"
+        >タグ: {{this.replace(item.caption.split('#'))}}</p>
       </div>
     </div>
   </a>
@@ -16,7 +23,7 @@
 <script>
 
 export default {
-  name: 'pictCasset',
+  name: 'PictCasset',
   props: ['item'],
   data: () => ({
   }),
@@ -40,13 +47,6 @@ export default {
 a {
   color: #333;
   text-decoration: none;
-}
-p{
-  margin: 0;
-  padding: 0;
-}
-img{
-  vertical-align: bottom;
 }
 .media{
   .mediaThum{
