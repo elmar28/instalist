@@ -13,4 +13,19 @@ new Vue({
   router,
   store: store,
   render: h => h(App),
+  head: {
+    meta: [
+      {name: 'description', content: 'instagramのユーザー画像一覧'},
+      {property: 'og:type', content: 'website'},
+      // Twitter
+      { name: 'twitter:title', content: 'instagramのユーザー一覧' },
+      // with shorthand
+      { n: 'twitter:description', c: 'Content description less than 200 characters'},
+      // Facebook / Open Graph
+      { property: 'fb:app_id', content: '123456789' },
+      { property: 'og:title', content: 'instagramのユーザー一覧' },
+      // with shorthand
+      //{ p: 'og:image', c: 'https://xxxx.xx/image.jpg' },
+    ],
+  }
 }).$mount('#app')

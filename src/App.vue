@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" height="30">
+    <img alt="instagram logo" src="./assets/logo.png" height="30">
     <h1>instagram Viewer</h1>
     <router-view/>
   </div>

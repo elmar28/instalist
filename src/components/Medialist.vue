@@ -1,26 +1,28 @@
 <template>
-  <div class="initScreen">
-    <p>
-      投稿一覧
-    </p>
-    <ul class="userMediaList">
-      <pictCasset v-for="item in mediaAll" v-bind:key="item.id" :item="item" />
-      <li class="userMediaListNext" v-if="dataAll && dataAll.media.paging.next" @click.prevent="getNext">
-        <a href="javascript:void(0)">続きを読み込む</a>
-      </li>
-    </ul>
-  </div>
+  <ul class="userMediaList">
+    <PictCasset
+      v-for="item in mediaAll"
+      v-bind:key="item.id"
+      :item="item"
+    />
+    <li class="userMediaListNext"
+      v-if="dataAll && dataAll.media.paging.next"
+      @click.prevent="getNext"
+    >
+      <a href="javascript:void(0)">続きを読み込む</a>
+    </li>
+  </ul>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import axios from 'axios';
-import pictCasset from '@/components/ui/PictCasset'
+import PictCasset from '@/components/ui/PictCasset'
 
 export default {
   name: 'Medialist',
   components: {
-    pictCasset
+    PictCasset
   },
   data: () => ({
     callMediaList: false

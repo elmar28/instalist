@@ -1,5 +1,10 @@
 <template>
+  <div class="initScreen">
+    <p>
+      投稿一覧
+    </p>
     <Medialist/>
+  </div>
 </template>
 
 <script>
