@@ -48,13 +48,6 @@ a {
   color: #333;
   text-decoration: none;
 }
-p{
-  margin: 0;
-  padding: 0;
-}
-img{
-  vertical-align: bottom;
-}
 .media{
   .mediaThum{
     float: left;

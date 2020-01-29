@@ -1,8 +1,6 @@
 <template>
   <div class="initScreen">
-    <p>
-      投稿一覧
-    </p>
+    <h2>投稿一覧</h2>
     <Medialist/>
   </div>
 </template>
@@ -28,25 +26,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: block;
-  margin: 0 10px;
-  background: #fff;
-}
-a {
-  color: #42b983;
-}
-p{
-  margin: 0;
-  padding: 0;
-}
-img{
-  vertical-align: bottom;
-}
 .media{
   .mediaThum{
     float: left;
